@@ -12,3 +12,19 @@ code {
     monospace;
 }
 
+.app {
+  border: 1px solid black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.data_control button {
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+  font-size: 1rem;
+}
