@@ -1,4 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Scoreboard from "./Scoreboard";
 // custom data
@@ -10,15 +11,30 @@ describe("Scoreboard", () => {
       render(<Scoreboard games={games_start} />);
     });
 
-    it.todo("check scoreboard has 5 items");
+    it("check scoreboard has 5 items", () => {
+      const list = screen.getAllByRole("article");
+      expect(list.length).toBe(5);
+    });
 
-    it.todo("first home team is Argentina");
+    it("first home team is Argentina", () => {
+      const { getByText } = within(screen.getByTestId("home-team-0"));
+      expect(getByText("Argentina")).toBeInTheDocument();
+    });
 
-    it.todo("first away team is Australia");
+    it("first away team is Australia", () => {
+      const { getByText } = within(screen.getByTestId("away-team-0"));
+      expect(getByText("Australia")).toBeInTheDocument();
+    });
 
-    it.todo("last home team is Spain");
+    it("last home team is Spain", () => {
+      const { getByText } = within(screen.getByTestId("home-team-4"));
+      expect(getByText("Spain")).toBeInTheDocument();
+    });
 
-    it.todo("last away team is Brazil");
+    it("last away team is Brazil", () => {
+      const { getByText } = within(screen.getByTestId("away-team-4"));
+      expect(getByText("Brazil")).toBeInTheDocument();
+    });
   });
 
   describe("At Update", () => {
@@ -26,15 +42,30 @@ describe("Scoreboard", () => {
       render(<Scoreboard games={games_update} />);
     });
 
-    it.todo("check scoreboard has 5 items");
+    it("check scoreboard has 5 items", () => {
+      const list = screen.getAllByRole("article");
+      expect(list.length).toBe(5);
+    });
 
-    it.todo("first home team is Uruguay");
+    it("first home team is Uruguay", () => {
+      const { getByText } = within(screen.getByTestId("home-team-0"));
+      expect(getByText("Uruguay")).toBeInTheDocument();
+    });
 
-    it.todo("first away team is Italy");
+    it("first away team is Italy", () => {
+      const { getByText } = within(screen.getByTestId("away-team-0"));
+      expect(getByText("Italy")).toBeInTheDocument();
+    });
 
-    it.todo("last home team is Germany");
+    it("last home team is Germany", () => {
+      const { getByText } = within(screen.getByTestId("home-team-4"));
+      expect(getByText("Germany")).toBeInTheDocument();
+    });
 
-    it.todo("last away team is France");
+    it("last away team is France", () => {
+      const { getByText } = within(screen.getByTestId("away-team-4"));
+      expect(getByText("France")).toBeInTheDocument();
+    });
   });
 
   describe("At End", () => {
@@ -42,14 +73,29 @@ describe("Scoreboard", () => {
       render(<Scoreboard games={games_end} />);
     });
 
-    it.todo("check scoreboard has 3 items");
+    it("check scoreboard has 3 items", () => {
+      const list = screen.getAllByRole("article");
+      expect(list.length).toBe(3);
+    });
 
-    it.todo("first home team is Uruguay");
+    it("first home team is Uruguay", () => {
+      const { getByText } = within(screen.getByTestId("home-team-0"));
+      expect(getByText("Uruguay")).toBeInTheDocument();
+    });
 
-    it.todo("first away team is Italy");
+    it("first away team is Italy", () => {
+      const { getByText } = within(screen.getByTestId("away-team-0"));
+      expect(getByText("Italy")).toBeInTheDocument();
+    });
 
-    it.todo("last home team is Argentina");
+    it("last home team is Argentina", () => {
+      const { getByText } = within(screen.getByTestId("home-team-2"));
+      expect(getByText("Argentina")).toBeInTheDocument();
+    });
 
-    it.todo("last away team is Australia");
+    it("last away team is Australia", () => {
+      const { getByText } = within(screen.getByTestId("away-team-2"));
+      expect(getByText("Australia")).toBeInTheDocument();
+    });
   });
 });
