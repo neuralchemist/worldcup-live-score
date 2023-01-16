@@ -1,0 +1,33 @@
+.score_board {
+	border: 2px solid black;
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	gap: 1rem;
+	padding: 0.25rem 0.25rem;
+}
+
+.score_card {
+	background-color: lightblue;
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: space-around;
+	padding: 0.5rem 0;
+
+}
+
+.home, .away {
+	display: flex;
+	gap: 0.5rem;
+	padding-left: 0.5rem;
+	width: 150px;
+}
+
+
+.home {
+	border-left: 0.25rem solid green;
+}
+
+.away {
+	border-left: 0.25rem solid red;
+}
