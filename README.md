@@ -1,9 +1,15 @@
 # worldcup live score
 
-## Test Driven Development
+## Test Driven Development (TDD)
 This app is developed using Test Driven Development (TDD). All the tests are implmented using React Testing Library and Jest.
 
 Focused on designing minimuim number of tests that will test the behavior of the component.Tests will not break on refactoring the code, as long as the behavior of the components do not change.
+
+
+## Continuous Integration (CI)
+Codes are tested for integration every time new code is pushed to the **dev branch** or merged with the main branch.
+**dev** branch is where new codes are pushed.
+
 
 ## SOLID principles
 * The main component is the Scoreboard. It's function is to render list of games. 
